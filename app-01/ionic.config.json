@@ -1,0 +1,7 @@
+{
+  "name": "scroll-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

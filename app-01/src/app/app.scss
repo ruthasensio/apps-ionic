@@ -1,0 +1,111 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+
+
+/* HEADER */
+
+.general-w {
+    position: absolute;
+    background-image: url('/assets/images/bk-pages.jpg');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    color: #fff;
+}
+
+
+.header-w {
+    text-align: center; width: 85%; margin: 0 auto 30px auto; padding-bottom: 0.5rem; border-bottom: 1px dashed white; 
+}
+
+.card-white {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    
+ }
+
+ .card-icons {
+    font-size: 3rem;
+    color: #46687c;
+ }
+
+// *****LOGIN***** //
+ion-input{ 
+    --placeholder-color: #fff ;
+    --placeholder-opacity: 0.7;
+    --color: #fff;	
+    --padding-bottom: 0.5rem; 
+    border-bottom: solid 1px #fff; 
+    margin: 0.8rem 0; 
+    outline: 0 none;
+    text-align: center; 
+    font-size: 1em; 
+  }
+
+.login-w {
+    background-image: url('/assets/images/bk-login.jpg');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    height: 100vh;    
+    color: #fff;   
+    font-family: 'Fjalla One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-logo { text-align: center; width: 85%; margin: 0 auto 30px auto; padding-bottom: 1rem; border-bottom: 1px dashed white; }
+.login-logo img { width: 75%; } 
+.ico-blanco { fill: #fff; }
+
+.login-item { margin: 0 auto 0 auto; position: relative; }
+.login-item ion-button { margin-top: 2rem; }
+.login-item > img { height: 25px; position: absolute; left: 10px;  top: 2px; color: antiquewhite; } 
+.footer { width: 100%; position: fixed; bottom: 0; opacity: 0.5; color: white; text-align: center;}
+
+
+/*  ESTILOS DEL MENU IONIC  */
+
+ion-toolbar {
+    --background: #46687c;
+    --color: #fff;
+    --max-height:50%;
+   }
+
+   ionm-menu { 
+    --background: #46687c;
+       --max-height:50%;
+    }
+
+ion-menu > ion-content {
+    --background: #46687c;
+    --color: #fff;
+    --max-height:50%;
+   }
+    
+   ion-menu-toggle {
+    --background: #46687c;
+    --color: #fff;
+   }
+  
+   ion-menu-toggle > ion-item {
+    --background: #46687c;
+    --color: #fff;
+   }
+
+   ion-menu-toggle > ion-icon {
+    --color: #fff;
+   }
+  
+  
+  

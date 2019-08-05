@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Listado de usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of aUsuarios">
+    <ion-card-header (click)="verDetalle(item)">
+      <div class="card-img">
+        <img [src]="item.picture.medium">
+      </div>
+      <div class="card-titles" >
+        <ion-card-title>{{item.name.first}} {{item.name.last}}</ion-card-title>
+        <ion-card-subtitle>{{item.gender}} </ion-card-subtitle>
+<!--         <ion-button size="small" (click)="verDetalle(item)">mas info</ion-button>
+ -->      </div>
+      <div class="clean"></div>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando datos...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-content>
+
+  <div class="login-w">
+
+    <div class="login-logo">
+      <img src="/assets/images/logo.png" alt="logo" />
+    </div>
+
+    <div class="login-contenido">
+
+      <div class="login-item">
+        <img src="/assets/images/icon-question.svg" alt="icono-usuario" />
+        <ion-input type="text" [(ngModel)]="nombre" class="login-in" name="nombre" id="nombre" placeholder="USUARIO"
+          required></ion-input>
+      </div>
+
+      <div class="login-item">
+        <img src="/assets/images/icon-padlock.svg" alt="icono-pass" />
+        <ion-input class="form-in" [(ngModel)]="pass" type="password" name="password" id="password" placeholder="PASSWORD"
+          required></ion-input>
+      </div>
+
+      <div class="login-item">
+        <ion-button expand="block" color="light" (click)="clicLogear($event)" class="form-button">Entrar</ion-button>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <p>App con Ionic - Practicas R.A.</p>
+    </div>
+  </div>
+
+
+
+</ion-content>
