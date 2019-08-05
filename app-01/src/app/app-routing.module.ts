@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'detalles', loadChildren: './pages/detalles/detalles.module#DetallesPageModule' },
   { path: 'usuarios-lista', loadChildren: './pages/usuarios-lista/usuarios-lista.module#UsuariosListaPageModule' },
   { path: 'blog', loadChildren: './pages/blog/blog.module#BlogPageModule' },
-  { path: 'detalles-blog', loadChildren: './pages/detalles-blog/detalles-blog.module#DetallesBlogPageModule' }
+  { path: 'detalles-blog', loadChildren: './pages/detalles-blog/detalles-blog.module#DetallesBlogPageModule' },
+  { path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' }
 ];
 
 @NgModule({

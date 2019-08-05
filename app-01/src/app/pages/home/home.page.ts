@@ -47,10 +47,10 @@ export class HomePage implements OnInit {
       })
 
     /* Idioma por defecto del dispositivo */
-/*     this.global.infoLanguage()
+     this.global.infoLanguage()
       .then((miInfo) => {
         this.language = miInfo.language
-      }) */
+      }) 
 
     /* Extra del dispositivo */
     this.global.infoExtra()

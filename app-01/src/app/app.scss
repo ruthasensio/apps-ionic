@@ -34,7 +34,7 @@
 
  .card-icons {
     font-size: 3rem;
-    color: #46687c;
+    color: #21a3ee;
  }
 
 // *****LOGIN***** //
@@ -76,36 +76,41 @@ ion-input{
 
 /*  ESTILOS DEL MENU IONIC  */
 
-ion-toolbar {
-    --background: #46687c;
-    --color: #fff;
-    --max-height:50%;
-   }
-
-   ionm-menu { 
-    --background: #46687c;
-       --max-height:50%;
+ion-menu{
+    ion-item,
+    ion-list, .list-md,
+    ion-content{
+        --background: var(--dark-color);
+        --ion-background-color: var(--dark-color);
     }
+    ion-item{
+        color: var(--text-color);
+    }
+    ion-icon{
+        color: #21a3ee;
+    }
+}
 
-ion-menu > ion-content {
-    --background: #46687c;
-    --color: #fff;
-    --max-height:50%;
-   }
-    
-   ion-menu-toggle {
-    --background: #46687c;
-    --color: #fff;
-   }
-  
-   ion-menu-toggle > ion-item {
-    --background: #46687c;
-    --color: #fff;
-   }
+.logo-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark-color);
+    padding: 2em 0;
+    min-height: 200px;
+    .logo-section__wrapper{
+        text-align: center;
+        .logo-section__logo{
+            display: block;
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+        }
+        .logo-section__title{
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: var(--text-color);
+        }
+    }
+}
 
-   ion-menu-toggle > ion-icon {
-    --color: #fff;
-   }
-  
-  
-  
