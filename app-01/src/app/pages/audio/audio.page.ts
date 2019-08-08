@@ -19,6 +19,10 @@ export class AudioPage implements OnInit {
   }
 
 
+  boton() {
+    console.log('bien')
+  }
+
   sonido(){
     this.sound.playSound();
   }

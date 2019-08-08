@@ -23,7 +23,9 @@ const routes: Routes = [
   { path: 'usuarios-lista', loadChildren: './pages/usuarios-lista/usuarios-lista.module#UsuariosListaPageModule' },
   { path: 'blog', loadChildren: './pages/blog/blog.module#BlogPageModule' },
   { path: 'detalles-blog', loadChildren: './pages/detalles-blog/detalles-blog.module#DetallesBlogPageModule' },
-  { path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' }
+  { path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' },
+  { path: 'listado-usuarios', loadChildren: './pages/listado-usuarios/listado-usuarios.module#ListadoUsuariosPageModule' },
+  { path: 'detalle-usuario', loadChildren: './pages/detalle-usuario/detalle-usuario.module#DetalleUsuarioPageModule' },
 ];
 
 @NgModule({

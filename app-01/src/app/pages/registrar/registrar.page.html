@@ -9,27 +9,45 @@
 
 <ion-content>
 
-<!-- FORMULARIO -->
- 
+  <!-- FORMULARIO -->
 
-<!-- LISTADO DE ITEMS -->
 
-  <ion-card *ngFor="let item of aPost">
-    <ion-card-header (click)="verDetalle(item)">
-      <div class="card-img">
-        <img [src]="item.avatar">
-      </div>
-      <div class="card-titles">
-        <ion-card-title>{{item.first_name}} {{item.last_name}}</ion-card-title>
-        <ion-card-subtitle>{{item.email}} </ion-card-subtitle>
-      </div>
-      <div class="clean"></div>
-    </ion-card-header>
-  </ion-card>
+  <!-- LISTADO DE ITEMS -->
 
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadDataPost($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando datos...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+  <div class="registro-w">
+
+    <div class="registro-item">
+      <p>Apartado para añadir usuarios a la lista introducir datos y pulsar el botón Añadir.</p>
+    </div>
+
+    <form (ngSubmit)="enviarUsuario()" >
+
+      <ion-item>
+        <ion-icon name="mail"></ion-icon>
+        <ion-input type="text" [(ngModel)]="registro.email" name="email" placeholder="E-mail"></ion-input>
+      </ion-item>
+        
+       <ion-item>
+        <ion-icon name="paper"></ion-icon>
+        <ion-input type="text" [(ngModel)]="registro.first_name" name="first_name" placeholder="Nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="paper"></ion-icon>
+        <ion-input type="text" [(ngModel)]="registro.last_name" name="last_name" placeholder="Apellidos"></ion-input>
+      </ion-item> 
+
+      <button ion-button type="submit" full>Añadir usuario</button>
+    </form>
+
+    <!-- LISTADO -->
+    <div class="registro-item">
+      <ul>
+        <li *ngFor="let item of aPost">{{item.first_name}} {{item.last_name}}</li>
+      </ul>
+    </div>
+  </div>
+
+
 
 </ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Detalles del usuario</ion-title>
+  
+      <ion-buttons slot="end">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+  
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <ion-card>
+  
+      <ion-card-header>
+        <img [src]="elPost.avatar">
+        <ion-card-title>{{elPost.first_name}} {{elPost.last_name}} </ion-card-title>
+        <ion-card-subtitle>{{elPost.email}}</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in viverra orci. Quisque varius suscipit porta. Fusce vel dolor consequat mauris ultricies molestie semper eget est. Morbi ipsum nulla, hendrerit eget facilisis sed, venenatis et magna. Aliquam non leo eget mauris gravida euismod vel vel tortor. Nam in augue vitae lectus pulvinar congue. Donec a iaculis mi. Proin non aliquam velit. Aenean auctor aliquet elit ut posuere. Morbi lobortis sollicitudin vulputate. Integer ullamcorper velit accumsan euismod ultrices.</p>
+       <p>Suspendisse bibendum elit purus. Suspendisse lacinia est quis tellus egestas, ut mattis justo elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam at molestie dui. Maecenas dui ipsum, suscipit at enim vitae, accumsan venenatis magna. Ut dapibus, est eget volutpat posuere, est purus dignissim magna, ut consectetur erat lacus non velit. Duis eu gravida eros. Curabitur nunc arcu, tincidunt vitae arcu quis, condimentum sodales enim. Vivamus eros magna, imperdiet eu viverra maximus, interdum vitae sem. Cras tortor leo, rutrum nec venenatis eu, ullamcorper in diam. Ut arcu sapien, posuere eget dapibus in, dictum non urna. Integer ligula magna, finibus id metus sed, iaculis blandit turpis. Vestibulum auctor lorem sed lacus semper, vitae sodales nisl maximus. Mauris fermentum accumsan fringilla. Etiam faucibus nulla eu pharetra tempor.</p>
+      </ion-card-content>
+  
+    </ion-card>
+  
+  </ion-content>

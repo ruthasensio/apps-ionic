@@ -1,0 +1,38 @@
+https://www.gajotres.net/ionic-2-how-o-create-and-validate-forms/2/
+VALIDAR FORMULARIOS
+
+
+
+Importar lo necesario
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+
+añadir el formcontrol a cada input
+ <ion-input formControlName="password"></ion-input>
+
+ Definir cada opcion
+ this.authForm = this.formBuilder.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
+}, {});
+
+Añadir la validacion al submit
+<form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+
+Añadir en el ts
+authForm: FormGroup;    
+
+
+
+Añadir NgIf si queremos
+
+<div *ngIf="submitted && frm.email.errors" class="invalid-feedback">
+    <ion-item *ngIf="frm.email.errors.required">
+        <p style="color:red">Email is required!</p>
+    </ion-item>
+    <ion-item *ngIf="frm.email.errors.email">
+        <p style="color:red">Email must be a valid email address!</p>
+    </ion-item>
+</div>  
+
+<ion-item *ngIf="frm.email.errors.required"> OTRO EJEMPLO 
+

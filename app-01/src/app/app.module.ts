@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule, Http } from '@angular/http';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { FormsModule, FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,8 @@ import { NativeAudio } from '@ionic-native/native-audio/ngx';
     HttpClientModule,
     HttpModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [
     StatusBar,

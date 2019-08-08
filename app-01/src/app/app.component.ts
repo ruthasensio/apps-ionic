@@ -44,6 +44,17 @@ export class AppComponent {
       title: 'Tipo Blog',
       url: '/blog',
       icon: 'list'
+    },
+    {
+      title: 'Registrar usuario',
+      url: '/registrar',
+      icon: 'person-add'
+    }
+    ,
+    {
+      title: 'Listado de usuarios',
+      url: '/listado-usuarios',
+      icon: 'person-add'
     }
   ];
 

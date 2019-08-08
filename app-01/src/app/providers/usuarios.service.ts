@@ -35,7 +35,6 @@ export class UsuariosService {
       options.params.set("results", results.toString());
       options.params.set("maxPages", maxPages.toString());
 
-
       // lo que hacemos
       this.http.get(this.url,options).subscribe((resultado) => {
          

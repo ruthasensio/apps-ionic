@@ -7,12 +7,12 @@ import { AlertService } from 'src/app/providers/alerts.service';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-detalles-blog',
-  templateUrl: './detalles-blog.page.html',
-  styleUrls: ['./detalles-blog.page.scss'],
+  selector: 'app-modificar-usuario',
+  templateUrl: './modificar-usuario.page.html',
+  styleUrls: ['./modificar-usuario.page.scss'],
 })
 
-export class DetallesBlogPage implements OnInit {
+export class ModificarUsuarioPage implements OnInit {
 
   // Creamos la variable tipo PostModel 
   elPost: PostModel;
@@ -47,9 +47,9 @@ export class DetallesBlogPage implements OnInit {
 
   }
 
+
   recuperarDatos(datos) {
-    let validacion = datos
-    console.log(validacion)
+    let validacion = datos;
     this.submitted = true;
 
     if (this.authForm.valid) {
@@ -73,7 +73,10 @@ export class DetallesBlogPage implements OnInit {
     } else if (this.authForm.invalid) {
       let mensaje = "¡Usuario NO modificado! Revisa los campos e intentalo de nuevo.";
       this.alertService.showToast(mensaje);
-      
+
+      setTimeout(function () {
+        this.submitted = false;
+      }, 3000);
     }
 
   }

@@ -114,3 +114,46 @@ ion-menu{
     }
 }
 
+
+// ***** REGISTRO ***** //
+
+
+.registro-w {
+    background-image: url('/assets/images/bk-pages.jpg');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    height: 100vh; 
+    font-family: 'Fjalla One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.registro-w ion-item {
+--background: rgb(250, 250, 250, 0.5);
+}
+
+.registro-item { margin: 0 auto 0 auto; position: relative; width: 90%; }
+
+.registro-w ion-input, .registro-w ion-textarea{ 
+    --placeholder-color: #21a3ee ;
+    --placeholder-opacity: 0.7;
+    --color: #000;	
+    --padding-bottom: 0.6rem; 
+    border: none; 
+    margin: 0.8rem 0; 
+    outline: 0 none;
+    text-align: left; 
+    font-size: 1em; 
+  }
+
+  .registro-w ion-icon { margin-right: 1rem; color: #21a3ee; }
+  .registro-w ion-button { margin-top: 1rem; color: #fff;  }
+  .registro-item ul { margin-left: 1rem; }
+
+  .novalidado { 
+    --color: red;	
+    color: red; 
+  }

@@ -10,15 +10,17 @@
 <ion-content>
 
   <ion-card *ngFor="let item of aPost">
-    <ion-card-header (click)="verDetalle(item)">
-      <div class="card-img">
+    <ion-card-header >
+      <div class="card-img" (click)="verDetalle(item)">
         <img [src]="item.avatar">
       </div>
       <div class="card-titles">
         <ion-card-title>{{item.first_name}} {{item.last_name}}</ion-card-title>
         <ion-card-subtitle>{{item.email}} </ion-card-subtitle>
       </div>
-      <div class="clean"></div>
+      
+      <div> <ion-icon name="trash" (click)="eliminarUsuario(item)"></ion-icon></div>
+      
     </ion-card-header>
   </ion-card>
 
@@ -27,4 +29,5 @@
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
+  
 </ion-content>

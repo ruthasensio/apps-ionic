@@ -6,17 +6,18 @@ import { ListadoService } from 'src/app/providers/listado.service';
 import { EliminarusuarioService } from 'src/app/providers/eliminarusuario.service';
 import { AlertService } from 'src/app/providers/alerts.service';
 
+
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.page.html',
-  styleUrls: ['./blog.page.scss'],
+  selector: 'app-listado-usuarios',
+  templateUrl: './listado-usuarios.page.html',
+  styleUrls: ['./listado-usuarios.page.scss'],
 })
-export class BlogPage implements OnInit {
+export class ListadoUsuariosPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   aPost: PostModel[];
   page: number = 1;
-  results: number = 6;
+  results: number = 12;
   resultsVistos: number;
   totalResults: any;
 
@@ -71,14 +72,11 @@ export class BlogPage implements OnInit {
     //item es el nombre de la posicion del array aPost que recorremos
     let postSeleccionado = new PostModel(item.id, item.email, item.first_name, item.last_name, item.avatar);
     this.listado.postActivo = postSeleccionado;
-    this.router.navigateByUrl('/detalles-blog')
+    this.router.navigateByUrl('/detalle-usuario')
   }
 
   eliminarUsuario(item) {
-
     this.eliminar.eliminarUsuarios(item.id).then((res) => {
-      //actualizar en pantalla
-      console.log(res)
       let mensaje = "¡Usuario eliminado correctamente!";
       this.alertService.showToast(mensaje);
     })
@@ -86,7 +84,13 @@ export class BlogPage implements OnInit {
         let mensaje = "¡Error al eliminar el usuario!";
         this.alertService.showToast(mensaje);
       })
+  }
 
+  modificarUsuario(item) {
+     //item es el nombre de la posicion del array aPost que recorremos
+     let postSeleccionado = new PostModel(item.id, item.email, item.first_name, item.last_name, item.avatar);
+     this.listado.postActivo = postSeleccionado;
+     this.router.navigateByUrl('/detalles-blog')   
   }
 
 }
