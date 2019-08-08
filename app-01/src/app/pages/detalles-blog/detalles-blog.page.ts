@@ -36,8 +36,12 @@ export class DetallesBlogPage implements OnInit {
   ngOnInit() {
     // asignamos el valor de la variable del sevicio a nuestra nueva varibale tipo PostModel
     this.elPost = this.listado.postActivo;
+
+
     this.datosModificados = new PostModel(this.elPost.id, '', '', '', this.elPost.avatar);
 
+/*     let datosFormulario = new PostModel(this.elPost.id, '', '', '', this.elPost.avatar)
+ */
     //Iniciamos el validador del formulario
     this.authForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -47,16 +51,16 @@ export class DetallesBlogPage implements OnInit {
 
   }
 
+
   recuperarDatos(datos) {
     let validacion = datos
     console.log(validacion)
     this.submitted = true;
+    
 
     if (this.authForm.valid) {
       let mensaje = "¡Usuario modificado correctamente!";
       this.alertService.showToast(mensaje);
-
-      //Vaciamos el formulario y cambiamos el estado del submitt
       /* this.authForm.reset(); */
       this.submitted = false;
 
@@ -73,7 +77,6 @@ export class DetallesBlogPage implements OnInit {
     } else if (this.authForm.invalid) {
       let mensaje = "¡Usuario NO modificado! Revisa los campos e intentalo de nuevo.";
       this.alertService.showToast(mensaje);
-      
     }
 
   }

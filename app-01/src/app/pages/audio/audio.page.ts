@@ -8,22 +8,19 @@ import { AudioService } from 'src/app/providers/audio.service';
   templateUrl: './audio.page.html',
   styleUrls: ['./audio.page.scss'],
 })
-export class AudioPage implements OnInit {
+export class AudioPage {
 
   constructor(
     public nativeAudio: NativeAudio,
     public sound: AudioService
   ) { }
 
-  ngOnInit() {
+  ionViewDidLoad	() {
+        this.sound.preloadSound()
+
   }
 
-
-  boton() {
-    console.log('bien')
-  }
-
-  sonido(){
+   sonido() {
     this.sound.playSound();
   }
 

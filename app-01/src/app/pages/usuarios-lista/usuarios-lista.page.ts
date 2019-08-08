@@ -35,8 +35,7 @@ export class UsuariosListaPage implements OnInit {
       });
   }
 
-  
-  loadData(event) {
+    loadData(event) {
 
       this.page ++;
       this.usuarios.getUsuarios(this.page, this.limit, this.maxPages)
@@ -51,7 +50,6 @@ export class UsuariosListaPage implements OnInit {
        if (this.page == this.maxPages) {
         event.target.disabled = true;
        }
-
   }
 
   toggleInfiniteScroll() {
@@ -69,7 +67,6 @@ export class UsuariosListaPage implements OnInit {
   // Vamos a la pagina de Detalles
    this.router.navigateByUrl('/detalles');
   }
-
 
 }
 
