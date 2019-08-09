@@ -94,6 +94,9 @@ export class ListadoUsuariosPage implements OnInit {
   } 
 
   modificarUsuario(item) {
+    //enviar el [] de la lista y guardarlos en listaUsuarios en el servicio
+    this.listado.listaUsuarios = this.aPost;
+  
     //item es el nombre de la posicion del array aPost que recorremos
     let postSeleccionado = new PostModel(item.id, item.email, item.first_name, item.last_name, item.avatar);
     this.listado.postActivo = postSeleccionado;

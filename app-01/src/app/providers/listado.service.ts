@@ -12,6 +12,7 @@ export class ListadoService {
 
   url = "https://reqres.in/api/users/"
   postActivo: PostModel;
+  listaUsuarios: PostModel[];
 
   constructor(
     public http: Http,
@@ -39,7 +40,7 @@ export class ListadoService {
     })
   }
 
-  public  totalPost(): Promise<TotalModel[]> {
+  public totalPost(): Promise<TotalModel[]> {
     return new Promise<TotalModel[]>((resolve, reject) => {
 
        this.http.get(this.url).subscribe((resul) => {

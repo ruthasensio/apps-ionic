@@ -49,7 +49,6 @@ export class LoginPage implements OnInit {
       this.nombre = "";
       this.pass = "";
       this.navCtrl.navigateRoot('listado-usuarios');
-
     }
 
   }

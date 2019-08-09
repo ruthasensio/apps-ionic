@@ -76,7 +76,7 @@ export class DetallesBlogPage implements OnInit {
 
   volver() {
     //actualizamos el array y volvemos a la pantalla anterior
-
+    //HAY QUE ACTUALIZAR this.listado.listaUsuarios CON LOS NUEVOS DATOS DE ELPOST
   }
 
 
