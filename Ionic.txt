@@ -1,0 +1,82 @@
+﻿DEBUGGER; /* Para detener y revisar en el navegador: debugger */
+
+- Arreglar modificar 
+- Actualizar despues de modificar 
+- Revisar musica
+- Revisar socialShare 
+- Splashscreen 
+- Icon 
+
+
+PROBAR
+---------------------
+Revisar musica, revisar socialShare y revisar validaciones
+https://enappd-apps.gitbook.io/apps/ionic-4-full-app/pro-pack-features/social-logins
+https://ionicacademy.com/ionic-social-sharing/
+
+DESLIZAR; https://www.youtube.com/watch?v=KQ580lVaFEs 
+
+GET / PUT / PUSH
+https://academia-binaria.com/comunicaciones-http-en-Angular/
+
+Formulario
+https://ionicframework.com/docs/v3/developer-resources/forms/
+https://dev.to/gugadev/angular-reactive-forms--fundamentos-41o2
+
+Linkar ficha 
+https://www.gajotres.net/ionic-2-sharing-data-between-pagescomponents/2/
+https://ionicacademy.com/pass-data-angular-router-ionic-4/
+
+
+Arrancar ionic en android
+-> ionic cordova run android
+-> adb devices
+
+Otra opcion
+-> ionic cordova build android
+-> ionic cordova run android
+
+Arrancar cordova browser
+-> ionic cordova platform add browser
+-> ionic cordova run browser
+
+https://ionicframework.com/docs/native/globalization
+https://ionicframework.com/docs/native/social-sharing
+https://github.com/apache/cordova-plugin-device
+https://ionicframework.com/docs/native/native-audio
+
+** PROMESAS **
+https://scotch.io/tutorials/javascript-promises-for-dummies
+https://developers.google.com/web/fundamentals/primers/promises
+https://www.youtube.com/watch?v=M8tA93L_Z6M&feature=youtu.be
+
+** IONIC **
+https://ionicacademy.com/
+
+// NETWORK
+https://ionicframework.com/docs/native/network
+https://github.com/apache/cordova-plugin-network-information
+
+// GEOLOCALIZACIÓN
+https://ionicframework.com/docs/native/geolocation
+ionic cordova plugin add cordova-plugin-geolocation
+npm install @ionic-native/geolocation
+
+// SERVICIOS
+ng generate service network
+ng generate service globalization
+
+// TEMAS A VER
+ciclo de vida de una pagina angular
+
+
+Pasar datos de una página a Otra
+-> Crear en el SERVICIO una variable donde se  guardaran los datos "usuarioActivo: DatosModel;".
+
+-> Crear en la pagina de datos una función que exporte los datos y linke con la pag de detalles.
+    -> Crear un elementoSeleccionado del modelo en cuestion con los parametros del Model.
+    -> Pasar la info del elementoSeleccionado a la variable usuarioActivo del servicio. 
+    -> Linkar a la pagina de detalles.
+-> Crear el modelo en la página de detalles y asignarle el valor del servicio.
+
+
