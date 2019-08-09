@@ -14,16 +14,15 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 
 export class DetallesBlogPage implements OnInit {
 
-  // Creamos la variable tipo PostModel 
   elPost: PostModel;
+  public registro: PostModel;
+  public datosModificados: PostModel;
+
 
   // Variables para la validacion del formulario
   submitted = false;
   authForm: FormGroup;
 
-  //Variables para el POST
-  public registro: PostModel;
-  public datosModificados: PostModel;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -38,7 +37,7 @@ export class DetallesBlogPage implements OnInit {
     this.elPost = this.listado.postActivo;
     this.datosModificados = new PostModel(this.elPost.id, '', '', '', this.elPost.avatar);
 
-    //Iniciamos el validador del formulario
+    //Validacion del formulario
     this.authForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       first_name: ['', [Validators.required]],
@@ -47,34 +46,73 @@ export class DetallesBlogPage implements OnInit {
 
   }
 
-
   recuperarDatos(datos) {
-    let validacion = datos
-    this.submitted = true;
-    console.log(validacion.email)
-    
-    
-     if (this.authForm.valid) {
-      let mensaje = "¡Usuario modificado correctamente!";
-      this.alertService.showToast(mensaje);
-      //this.authForm.reset(); 
-      this.submitted = false;
+    // datos guarda los tres valores del formulario
+    // enviamos los datos  
+    this.enviamosDatos(datos);
+  }
 
-      // Promesa del Post si el formulario está validado
-      this.modificarusuario.modUsuario(this.datosModificados).then((res) => {
-        //actualizar en pantalla
-        this.elPost = this.datosModificados;
+
+  enviamosDatos(datos) {
+    // Promesa del Post si el formulario está validado
+    this.modificarusuario.modUsuario(this.datosModificados).then((res) => {
+      //mandamos los nuevos datos a la funcion actualizarPanralla
+      this.actualizarPantalla(datos);
+    })
+      .catch((error) => {
+        let mensaje = "¡Error al modificar el usuario!";
+        this.alertService.showToast(mensaje);
       })
-        .catch((error) => {
-          let mensaje = "¡Error al modificar el usuario!";
-          this.alertService.showToast(mensaje);
-        })
-
-    } else if (this.authForm.invalid) {
-      let mensaje = "¡Usuario NO modificado! Revisa los campos e intentalo de nuevo.";
-      this.alertService.showToast(mensaje);
-    } 
 
   }
+
+
+  actualizarPantalla(datos) {
+    //actualizamos el elPost
+    this.elPost.email = datos.email;
+    this.elPost.first_name = datos.first_name;
+    this.elPost.last_name = datos.last_name;
+  }
+
+  volver() {
+    //actualizamos el array y volvemos a la pantalla anterior
+
+  }
+
+
+
+  modificarUsuario(datos) {
+    // recogemos los datos y los enviamos al servicio
+  }
+
+
+  /*   recuperarDatos(datos) {
+      let validacion = datos
+      console.log(validacion)
+      this.submitted = true;
+      
+  
+      if (this.authForm.valid) {
+        let mensaje = "¡Usuario modificado correctamente!";
+        this.alertService.showToast(mensaje);
+        //this.authForm.reset();
+        this.submitted = false;
+  
+        // Promesa del Post si el formulario está validado
+        this.modificarusuario.modUsuario(this.datosModificados).then((res) => {
+          //actualizar en pantalla
+          this.elPost = this.datosModificados;
+        })
+          .catch((error) => {
+            let mensaje = "¡Error al modificar el usuario!";
+            this.alertService.showToast(mensaje);
+          })
+  
+      } else if (this.authForm.invalid) {
+        let mensaje = "¡Usuario NO modificado! Revisa los campos e intentalo de nuevo.";
+        this.alertService.showToast(mensaje);
+      }
+  
+    } */
 
 }

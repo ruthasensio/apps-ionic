@@ -41,14 +41,14 @@ export class LoginPage implements OnInit {
     if (this.nombre == this.nombreOk && this.pass == this.passOk) {
       this.mensaje = "Acceso Correcto";
       this.alertService.showToast(this.mensaje);
-      this.navCtrl.navigateRoot('home');
+      this.navCtrl.navigateRoot('listado-usuarios');
 
     } else {
       this.mensaje = "Acceso Incorrecto";
       this.alertService.showToast(this.mensaje);
       this.nombre = "";
       this.pass = "";
-      this.navCtrl.navigateRoot('home');
+      this.navCtrl.navigateRoot('listado-usuarios');
 
     }
 

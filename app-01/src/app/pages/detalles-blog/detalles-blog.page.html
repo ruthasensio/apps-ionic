@@ -31,23 +31,23 @@
             placeholder="E-mail"></ion-input>
         </ion-item>
       
-        <div *ngIf="submitted && !datosModificados.email.email">
+<!--         <div *ngIf="submitted && !datosModificados.email.email">
           <ion-item>
             <p style="color:red">¡Revisa el email!</p>
           </ion-item>
-        </div>
+        </div> -->
 
         <ion-item>
           <ion-icon name="paper"></ion-icon>
           <ion-input type="text" [(ngModel)]="datosModificados.first_name" formControlName="first_name"
             name="first_name" placeholder="Nombre"></ion-input>
         </ion-item>
-
+<!-- 
         <div *ngIf="submitted">
           <ion-item *ngIf="!datosModificados.first_name">
             <p style="color:red">El nombre es obligatotio!</p>
           </ion-item>
-        </div>
+        </div> -->
 
         <ion-item>
           <ion-icon name="paper"></ion-icon>
@@ -55,14 +55,14 @@
             placeholder="Apellidos"></ion-input>
         </ion-item>
 
-        <div *ngIf="submitted">
+<!--         <div *ngIf="submitted">
           <ion-item *ngIf="!datosModificados.last_name">
             <p style="color:red">¡El apellido es obligatotio!</p>
           </ion-item>
         </div>
+ -->
 
-
-        <button ion-button type="submit" full>Modificar</button>
+        <button  type="submit" full>Guardar</button> <button  type="button" (click)="volver()" full>Voler</button>
       </form>
 
     </ion-card-content>
