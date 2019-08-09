@@ -43,6 +43,7 @@ export class ListadoUsuariosPage implements OnInit {
       .catch((error) => {
         //error
       })
+
   }
 
   loadDataPost(event) {
@@ -75,29 +76,21 @@ export class ListadoUsuariosPage implements OnInit {
   }
 
   eliminarUsuario(item) {
-     this.actualizarListado(item);
-     this.eliminar.eliminarUsuarios(item.id).then((res) => {
-     let mensaje = "¡Usuario eliminado correctamente!";
-     this.alertService.showToast(mensaje);
+    this.eliminar.eliminarUsuarios(item.id).then((res) => {
+      let mensaje = "¡Usuario eliminado correctamente!";
+      this.alertService.showToast(mensaje);
     })
       .catch((error) => {
         let mensaje = "¡Error al eliminar el usuario!";
         this.alertService.showToast(mensaje);
       })
   }
- 
-  actualizarListado(item) {
-    //eliminamos el item seleccionado del array
-    let posicion = this.aPost.indexOf(item)   
-    this.aPost.splice(posicion , 1);
-    return (this.aPost) 
-  } 
 
   modificarUsuario(item) {
-    //item es el nombre de la posicion del array aPost que recorremos
-    let postSeleccionado = new PostModel(item.id, item.email, item.first_name, item.last_name, item.avatar);
-    this.listado.postActivo = postSeleccionado;
-    this.router.navigateByUrl('/detalles-blog')
+     //item es el nombre de la posicion del array aPost que recorremos
+     let postSeleccionado = new PostModel(item.id, item.email, item.first_name, item.last_name, item.avatar);
+     this.listado.postActivo = postSeleccionado;
+     this.router.navigateByUrl('/detalles-blog')   
   }
 
 }

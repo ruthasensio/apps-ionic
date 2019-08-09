@@ -1,0 +1,55 @@
+<ion-content class="general">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!--         <ion-title>
+          Home
+        </ion-title> -->
+  </ion-toolbar>
+
+  <div class="general-w">
+    <div class="header-w">
+      <h1>Home - Información</h1>
+    </div>
+
+    <div class="card">
+
+      <ion-card class="card-white">
+        <ion-card-header>
+          <ion-icon name="globe" class="card-icons"></ion-icon>
+          <ion-card-title> Coordenadas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p> {{coor}}</p>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Ocultamos card si language es undefined -->
+       <ion-card class="card-white" *ngIf="(this.language!==undefined)">
+        <ion-card-header>
+          <ion-icon name="pin" class="card-icons"></ion-icon>
+          <ion-card-title> Idioma</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{language}}</p>
+        </ion-card-content>
+      </ion-card> 
+
+      <ion-card class="card-white">
+        <ion-card-header>
+          <ion-icon name="pin" class="card-icons"></ion-icon>
+          <ion-card-title> Nombre del dispositivo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{extra}}</p>
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+    <div class="footer">
+      <p>App con Ionic - Practicas R.A.</p>
+    </div>
+  </div>
+
+</ion-content>

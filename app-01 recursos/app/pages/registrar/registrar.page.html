@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- FORMULARIO -->
+
+
+  <!-- LISTADO DE ITEMS -->
+
+  <div class="registro-w">
+
+    <div class="registro-item">
+      <p>Apartado para añadir usuarios a la lista introducir datos y pulsar el botón Añadir.</p>
+    </div>
+
+    <form (ngSubmit)="enviarUsuario()" >
+
+      <ion-item>
+        <ion-icon name="mail"></ion-icon>
+        <ion-input type="text" [(ngModel)]="registro.email" name="email" placeholder="E-mail"></ion-input>
+      </ion-item>
+        
+       <ion-item>
+        <ion-icon name="paper"></ion-icon>
+        <ion-input type="text" [(ngModel)]="registro.first_name" name="first_name" placeholder="Nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="paper"></ion-icon>
+        <ion-input type="text" [(ngModel)]="registro.last_name" name="last_name" placeholder="Apellidos"></ion-input>
+      </ion-item> 
+
+      <button ion-button type="submit" full>Añadir usuario</button>
+    </form>
+
+    <!-- LISTADO -->
+    <div class="registro-item">
+      <ul>
+        <li *ngFor="let item of aPost">{{item.first_name}} {{item.last_name}}</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+</ion-content>
