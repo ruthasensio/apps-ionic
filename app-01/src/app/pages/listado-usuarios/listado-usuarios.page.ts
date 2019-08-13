@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, OnChanges } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
 import PostModel from 'src/app/models/Post';
 import { Router } from '@angular/router';
@@ -28,13 +28,18 @@ export class ListadoUsuariosPage implements OnInit {
     public alertService: AlertService
   ) { }
 
-  ngOnInit() {
+  ionViewDidEnter() {
+console.log(this.listado.listaUsuarios)
+    //revisamos si hay datos en el array (con modificaciones), si está vacío cargamos los datos del API
+  }
 
-    this.listado.totalPost()
+  ngOnInit() {
+       this.listado.totalPost()
       .then((resp) => {
         this.totalResults = resp;
       })
 
+    //cargamos una primera tanda de datos; despues cargará mas el scroll infinito
     this.listado.recogiendoPost(this.page, this.results)
       .then((res) => {
         this.aPost = res;
@@ -43,8 +48,10 @@ export class ListadoUsuariosPage implements OnInit {
       .catch((error) => {
         //error
       })
+   
   }
 
+  //cargamos mas datos del API con scroll infinito
   loadDataPost(event) {
     this.page++;
     this.listado.recogiendoPost(this.page, this.results)
@@ -67,6 +74,7 @@ export class ListadoUsuariosPage implements OnInit {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
 
+  // Funcion para ver detalle del usuario
   verDetalle(item) {
     //item es el nombre de la posicion del array aPost que recorremos
     let postSeleccionado = new PostModel(item.id, item.email, item.first_name, item.last_name, item.avatar);
@@ -74,33 +82,41 @@ export class ListadoUsuariosPage implements OnInit {
     this.router.navigateByUrl('/detalle-usuario')
   }
 
+  // Funcion para eliminar un usuario
   eliminarUsuario(item) {
-     this.actualizarListado(item);
-     this.eliminar.eliminarUsuarios(item.id).then((res) => {
-     let mensaje = "¡Usuario eliminado correctamente!";
-     this.alertService.showToast(mensaje);
+    this.actualizarListado(item);
+    this.eliminar.eliminarUsuarios(item.id).then((res) => {
+      let mensaje = "¡Usuario eliminado correctamente!";
+      this.alertService.showToast(mensaje);
     })
       .catch((error) => {
         let mensaje = "¡Error al eliminar el usuario!";
         this.alertService.showToast(mensaje);
       })
   }
- 
+
+  // Funcion para actualizar el listado despues de eliminar 
   actualizarListado(item) {
     //eliminamos el item seleccionado del array
-    let posicion = this.aPost.indexOf(item)   
-    this.aPost.splice(posicion , 1);
-    return (this.aPost) 
-  } 
+    let posicion = this.aPost.indexOf(item)
+    this.aPost.splice(posicion, 1);
+    return (this.aPost)
+  }
 
+  // Funcion para modificar un usuario
   modificarUsuario(item) {
     //enviar el [] de la lista y guardarlos en listaUsuarios en el servicio
     this.listado.listaUsuarios = this.aPost;
-  
     //item es el nombre de la posicion del array aPost que recorremos
     let postSeleccionado = new PostModel(item.id, item.email, item.first_name, item.last_name, item.avatar);
     this.listado.postActivo = postSeleccionado;
     this.router.navigateByUrl('/detalles-blog')
+  }
+
+  //Funcion para añadir nuevo usuario
+  nuevoUsuario() {
+    this.listado.listaUsuarios = this.aPost;
+    this.router.navigateByUrl('/registrar')
   }
 
 }

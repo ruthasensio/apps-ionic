@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Slider</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts" #slider  (ionSlideDidChange)="this.manejarSlider();">
+    <ion-slide>
+      <h1>Slider 1</h1>
+      <img src="../../../assets/images/slider1.png" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis!</p>
+    </ion-slide>
+
+    <ion-slide >
+      <h1>Slider 2</h1>
+      <img src="../../../assets/images/slider1.png" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis!</p>
+    </ion-slide>
+
+    <ion-slide>
+      <h1>Slider 3</h1>
+      <img src="../../../assets/images/slider1.png" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis!</p>
+    </ion-slide>
+  </ion-slides>
+<!-- 
+ <ion-slides pager="true" [options]="slideOptsV" #slider2  (ionSlideDidChange)="this.manejarSliderV();">
+      <ion-slide>
+        <h1>Slider 11</h1>
+        <img src="../../../assets/images/slider1.png" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis!</p>
+      </ion-slide>
+  
+      <ion-slide >
+        <h1>Slider 12</h1>
+        <img src="../../../assets/images/slider1.png" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis!</p>
+      </ion-slide>
+  
+      <ion-slide>
+        <h1>Slider 13</h1>
+        <img src="../../../assets/images/slider1.png" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis!</p>
+      </ion-slide>
+    </ion-slides>  
+ -->
+
+</ion-content>

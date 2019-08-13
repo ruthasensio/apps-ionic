@@ -4,12 +4,15 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Listado de usuarios</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="nuevoUsuario()"><ion-icon ios="ios-add" md="md-add"></ion-icon></ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-
   <ion-list>
     <ion-item-sliding *ngFor="let item of aPost">
       <ion-item>
@@ -28,13 +31,7 @@
       </ion-item-options>
     </ion-item-sliding>
 
-
-
   </ion-list>
-
-
-
-
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadDataPost($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando datos...">
