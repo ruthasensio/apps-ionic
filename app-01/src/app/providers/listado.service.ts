@@ -10,7 +10,8 @@ import TotalModel from '../models/Total';
 })
 export class ListadoService {
 
-  url = "https://reqres.in/api/users/"
+  url = "https://reqres.in/api/users/" 
+   /*url= "https://kitsu.io/api/edge/manga" */
   postActivo: PostModel;
   listaUsuarios: PostModel[];
 
@@ -39,6 +40,7 @@ export class ListadoService {
       })
     })
   }
+
 
   public totalPost(): Promise<TotalModel[]> {
     return new Promise<TotalModel[]>((resolve, reject) => {

@@ -1,4 +1,5 @@
-<ion-content class="general">
+ 
+  <ion-content class="general">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -26,7 +27,7 @@
       </ion-card>
 
       <!-- Ocultamos card si language es undefined -->
-       <ion-card class="card-white" *ngIf="(this.language!==undefined)">
+      <ion-card class="card-white" *ngIf="(this.language!==undefined)">
         <ion-card-header>
           <ion-icon name="pin" class="card-icons"></ion-icon>
           <ion-card-title> Idioma</ion-card-title>
@@ -34,7 +35,7 @@
         <ion-card-content>
           <p>{{language}}</p>
         </ion-card-content>
-      </ion-card> 
+      </ion-card>
 
       <ion-card class="card-white">
         <ion-card-header>
@@ -45,11 +46,18 @@
           <p>{{extra}}</p>
         </ion-card-content>
       </ion-card>
-
     </div>
+
+    <ion-button full (click)="openModal()">
+      <ion-icon slot="start"></ion-icon>
+      COMO FUNCIONA
+    </ion-button>
+
     <div class="footer">
       <p>App con Ionic - Practicas R.A.</p>
     </div>
   </div>
 
+
+  
 </ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>manga</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--   <ion-list>
+   <ion-item *ngFor="let item of aMangas">
+      <ion-avatar slot="start">
+        <img [src]="item.attributes.posterImage.tiny">
+      </ion-avatar>
+
+      <ion-label>{{item.attributes.slug}}</ion-label>
+    </ion-item>
+  </ion-list> -->
+
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let item of aMangas">
+      <h1>{{item.attributes.slug}}</h1>
+      <img [src]="item.attributes.posterImage.tiny">
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

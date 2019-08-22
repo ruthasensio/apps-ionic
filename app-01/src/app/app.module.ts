@@ -11,6 +11,7 @@ import { HttpModule, Http } from '@angular/http';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { FormsModule, FormBuilder } from '@angular/forms';
+import { ModalPageModule } from './pages/modal/modal.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { FormsModule, FormBuilder } from '@angular/forms';
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
+    ModalPageModule
   ],
   providers: [
     StatusBar,

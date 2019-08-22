@@ -4,7 +4,8 @@ import { GeolocalizacionService } from 'src/app/providers/geolocalizacion.servic
 import { AlertService } from '../../providers/alerts.service';
 import { GlobalizationService } from 'src/app/providers/globalization.service';
 import { Globalization } from '@ionic-native/globalization/ngx';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
 
 @Component({
   selector: 'app-home',
@@ -26,8 +27,8 @@ export class HomePage implements OnInit {
     public alertService: AlertService,
     public global: GlobalizationService,
     public globalization: Globalization,
-    public menu: MenuController
-  ) { }
+    public menu: MenuController,
+    public modalController: ModalController  ) { }
 
 
   ngOnInit() {
@@ -47,25 +48,21 @@ export class HomePage implements OnInit {
       })
 
     /* Idioma por defecto del dispositivo */
-     this.global.infoLanguage()
+    this.global.infoLanguage()
       .then((miInfo) => {
         this.language = miInfo.language
-      }) 
+      })
 
     /* Extra del dispositivo */
     this.global.infoExtra()
       .then((miExtra) => {
         console.dir('seria:' + miExtra)
         this.extra = miExtra.extra;
-       })
-       .catch((err) => {
+      })
+      .catch((err) => {
         this.mensaje = "No se pueden encontrar";
         this.alertService.showToast(this.mensaje);
       })
-
-
-
-
 
 
     /*  OTROS CODIGOS NO UTILIZADOS  */
@@ -98,4 +95,15 @@ export class HomePage implements OnInit {
 
   }
 
+
+
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ModalPage
+     
+    });
+ 
+    return await modal.present();
+  }
 }

@@ -13,20 +13,19 @@ export class SliderPage implements OnInit {
 
   @ViewChild('slider') slider: IonSlides;
 
-  slideActiva: number; 
+  slideActiva: number;
+  slideVisible: boolean = true;
 
   slideOpts = {
     initialSlide: 0,
     speed: 400,
-    direction: 'horizontal',
-    grabCursor: true
+    direction: 'horizontal'
   };
 
   slideOptsV = {
-    initialSlide: 1,
+    initialSlide: 0,
     speed: 400,
-    direction: 'vertical',
-    loop: true
+    direction: 'vertical'
   };
 
   constructor() { }
@@ -34,32 +33,43 @@ export class SliderPage implements OnInit {
   ngOnInit() {
   }
 
-  manejarSlider($event) {
+
+  /* revisar en que slider estamos desde el slider H */
+  manejarSlider() {
     this.slider.getActiveIndex().then(index => {
       this.slideActiva = index
       this.cambiarSlider();
+      console.log(this.slideActiva);
       return this.slideActiva
     });
   }
 
-  cambiarSlider () {
-    if(this.slideActiva === 2 ) {
-      console.log("ocultar slide") 
-       }
+  /* Cambiar de H a V */
+  cambiarSlider() {
+    if (this.slideActiva === 2) {
+      console.log("cambio");
+      this.slideVisible = false;
+    }
   }
 
-  
- manejarSliderV($event) {
+
+  /* revisar en que slider estamos desde el slider V */
+  manejarSliderV() {
     this.slider.getActiveIndex().then(index => {
       this.slideActiva = index
+      this.cambiarSliderV();
+      console.log(this.slideActiva);
       return this.slideActiva
     });
   }
 
-
-
-
-  /* revisar en que slider estamos */
+  /* Cambiar de V a H */
+  cambiarSliderV() {
+    if (this.slideActiva === 2) {
+      console.log("ocultar slideV");
+      this.slideVisible = true;
+    }
+  }
 
 
 }
