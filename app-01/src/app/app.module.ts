@@ -23,7 +23,7 @@ import { ModalPageModule } from './pages/modal/modal.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    ModalPageModule
+    ModalPageModule,
   ],
   providers: [
     StatusBar,

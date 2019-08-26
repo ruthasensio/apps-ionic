@@ -31,7 +31,8 @@ import { GlobalizationService } from 'src/app/providers/globalization.service';
     GeolocationService, 
     GeolocalizacionService, 
     GlobalizationService
-    
   ]
 })
 export class HomePageModule {}
+
+

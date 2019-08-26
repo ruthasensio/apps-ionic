@@ -16,12 +16,12 @@ import { StorageService } from '../../providers/storage.service';
 })
 export class HomePage implements OnInit {
 
-  coor: any
-  lat: number
-  lon: number
-  mensaje: string
-  language: any
-  extra: string
+  coor: any;
+  lat: number;
+  lon: number;
+  mensaje: string;
+  language: any;
+  extra: string;
 
   constructor(
     public geolocation: Geolocation,
@@ -32,13 +32,18 @@ export class HomePage implements OnInit {
     public menu: MenuController,
     public modalController: ModalController,
     public storage: StorageService
-    ) { }
-
+  ) { }
 
   ngOnInit() {
+    // Activamos el menu lateral
     this.menu.enable(true);
+
+    // Revisamos el LS y si es la primera vez que se accede abrimos la modal de info
     this.storage.revisarStorage();
-  
+    if (this.storage.revisarStorage() == false) {
+      this.openModal()
+    } 
+
     /*  Coordenadas longitud y latitud  */
     this.geo.encontrandoLocalizacion()
       .then((misCoordenadas) => {
@@ -51,11 +56,11 @@ export class HomePage implements OnInit {
         this.alertService.showToast(this.mensaje);
       })
 
-    /* Idioma por defecto del dispositivo */
+    /* Idioma por defecto del dispositivo
     this.global.infoLanguage()
       .then((miInfo) => {
         this.language = miInfo.language
-      })
+      }) */
 
     /* Extra del dispositivo */
     this.global.infoExtra()
@@ -66,7 +71,7 @@ export class HomePage implements OnInit {
       .catch((err) => {
         this.mensaje = "No se pueden encontrar";
         this.alertService.showToast(this.mensaje);
-      })
+      });
 
 
     /*  OTROS CODIGOS NO UTILIZADOS  */
@@ -102,7 +107,11 @@ export class HomePage implements OnInit {
     const modal = await this.modalController.create({
       component: ModalPage
     });
- 
     return await modal.present();
   }
+
 }
+
+
+
+

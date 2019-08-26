@@ -8,6 +8,12 @@ import { ModalController, NavParams } from '@ionic/angular';
 })
 export class ModalPage implements OnInit {
 
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    direction: 'horizontal'
+  };
+
   constructor( 
     private modalController: ModalController,
     private navParams: NavParams) { }
@@ -16,8 +22,8 @@ export class ModalPage implements OnInit {
   }
 
   async closeModal() {
-    const onClosedData: string = "Wrapped Up!";
-    await this.modalController.dismiss(onClosedData);
+    await this.modalController.dismiss();
   }
 
+  
 }
