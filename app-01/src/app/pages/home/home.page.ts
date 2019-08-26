@@ -6,6 +6,8 @@ import { GlobalizationService } from 'src/app/providers/globalization.service';
 import { Globalization } from '@ionic-native/globalization/ngx';
 import { MenuController, ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
+import { StorageService } from '../../providers/storage.service';
+
 
 @Component({
   selector: 'app-home',
@@ -28,13 +30,15 @@ export class HomePage implements OnInit {
     public global: GlobalizationService,
     public globalization: Globalization,
     public menu: MenuController,
-    public modalController: ModalController  ) { }
+    public modalController: ModalController,
+    public storage: StorageService
+    ) { }
 
 
   ngOnInit() {
     this.menu.enable(true);
-
-
+    this.storage.revisarStorage();
+  
     /*  Coordenadas longitud y latitud  */
     this.geo.encontrandoLocalizacion()
       .then((misCoordenadas) => {
@@ -83,9 +87,7 @@ export class HomePage implements OnInit {
          this.coor = `${this.lat} ,${this.lon}`
         });  */
 
-
     /* OPCION RECORTADA*/
-
     /*     this.geolocation.getCurrentPosition()
           .then((geoposition: Geoposition) => {
             this.lat = geoposition.coords.latitude;
@@ -95,13 +97,10 @@ export class HomePage implements OnInit {
 
   }
 
-
-
-
   async openModal() {
+    this.storage.saveStorage('primerAcceso', true);
     const modal = await this.modalController.create({
       component: ModalPage
-     
     });
  
     return await modal.present();

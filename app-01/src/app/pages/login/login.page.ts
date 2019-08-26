@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { AlertService } from '../../providers/alerts.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -24,8 +23,7 @@ export class LoginPage implements OnInit {
     public router: Router, 
     public navCtrl: NavController,
     public alertService: AlertService,
-    public menu: MenuController
-    ) {
+    public menu: MenuController    ) {
   }
 
   ngOnInit() {
@@ -34,7 +32,6 @@ export class LoginPage implements OnInit {
 
   /* comprobar si nombre y pass introducidos son iguales a los indicados */
   async clicLogear(ev: Event) {
-
     this.nombreOk = "Pepe";
     this.passOk = "123456";
 
@@ -52,5 +49,6 @@ export class LoginPage implements OnInit {
     }
 
   }
+
 
 }

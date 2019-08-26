@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'detalle-usuario', loadChildren: './pages/detalle-usuario/detalle-usuario.module#DetalleUsuarioPageModule' },
   { path: 'slider', loadChildren: './pages/slider/slider.module#SliderPageModule' },
   { path: 'manga', loadChildren: './pages/manga/manga.module#MangaPageModule' },
-  { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' },
+/*   { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' }, */
 ];
 
 @NgModule({
