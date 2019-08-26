@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -12,14 +10,14 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
-      { path: 'socialshare', loadChildren: './pages/socialshare/socialshare.module#SocialsharePageModule' },
-      { path: 'audio', loadChildren: './pages/audio/audio.module#AudioPageModule' },
-
+      { path: 'socialshare', loadChildren: '../socialshare/socialshare.module#SocialsharePageModule' },
+      { path: 'audio', loadChildren: '../audio/audio.module#AudioPageModule' },
+      { path: 'video', loadChildren: '..//video/video.module#VideoPageModule' }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/socialshare',
+    redirectTo: '/tabs/audio',
     pathMatch: 'full'
   }
 ];

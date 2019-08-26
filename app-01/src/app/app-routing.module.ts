@@ -25,9 +25,8 @@ const routes: Routes = [
   { path: 'listado-usuarios', loadChildren: './pages/listado-usuarios/listado-usuarios.module#ListadoUsuariosPageModule' },
   { path: 'detalle-usuario', loadChildren: './pages/detalle-usuario/detalle-usuario.module#DetalleUsuarioPageModule' },
   { path: 'slider', loadChildren: './pages/slider/slider.module#SliderPageModule' },
-  { path: 'manga', loadChildren: './pages/manga/manga.module#MangaPageModule' },
-  { path: '', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
-  { path: 'video', loadChildren: './video/video.module#VideoPageModule' },
+  { path: 'manga', loadChildren: './pages/manga/manga.module#MangaPageModule' },      
+  { path: '', loadChildren: './pages/tabs/tabs.module#TabsPageModule' }
 /*   { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' }, */
 ];
 

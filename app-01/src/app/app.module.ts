@@ -12,6 +12,7 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { FormsModule, FormBuilder } from '@angular/forms';
 import { ModalPageModule } from './pages/modal/modal.module';
+import { VideoPlayer } from '@ionic-native/video-player/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { ModalPageModule } from './pages/modal/modal.module';
   providers: [
     StatusBar,
     SplashScreen,
+    VideoPlayer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     SocialSharing,
     NativeAudio
