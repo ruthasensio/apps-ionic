@@ -31,6 +31,7 @@ const routes: Routes = [
 /*   { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' }, */
 ];
 
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
