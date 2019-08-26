@@ -17,8 +17,6 @@ const routes: Routes = [
   },
   { path: 'scroll', loadChildren: './pages/scroll/scroll.module#ScrollPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'socialshare', loadChildren: './pages/socialshare/socialshare.module#SocialsharePageModule' },
-  { path: 'audio', loadChildren: './pages/audio/audio.module#AudioPageModule' },
   { path: 'detalles', loadChildren: './pages/detalles/detalles.module#DetallesPageModule' },
   { path: 'usuarios-lista', loadChildren: './pages/usuarios-lista/usuarios-lista.module#UsuariosListaPageModule' },
   { path: 'blog', loadChildren: './pages/blog/blog.module#BlogPageModule' },
@@ -28,6 +26,8 @@ const routes: Routes = [
   { path: 'detalle-usuario', loadChildren: './pages/detalle-usuario/detalle-usuario.module#DetalleUsuarioPageModule' },
   { path: 'slider', loadChildren: './pages/slider/slider.module#SliderPageModule' },
   { path: 'manga', loadChildren: './pages/manga/manga.module#MangaPageModule' },
+  { path: '', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+  { path: 'video', loadChildren: './video/video.module#VideoPageModule' },
 /*   { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' }, */
 ];
 

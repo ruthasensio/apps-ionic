@@ -49,12 +49,16 @@ export class AppComponent {
       title: 'Registrar usuario',
       url: '/registrar',
       icon: 'person-add'
-    }
-    ,
+    },
     {
       title: 'Listado de usuarios',
       url: '/listado-usuarios',
       icon: 'person-add'
+    },
+    {
+      title: 'TABS',
+      url: '/tabs',
+      icon: 'moon'
     }
   ];
 
