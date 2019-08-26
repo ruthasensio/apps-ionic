@@ -56,11 +56,11 @@ export class HomePage implements OnInit {
         this.alertService.showToast(this.mensaje);
       })
 
-    /* Idioma por defecto del dispositivo
+    /* Idioma por defecto del dispositivo */
     this.global.infoLanguage()
       .then((miInfo) => {
         this.language = miInfo.language
-      }) */
+      }) 
 
     /* Extra del dispositivo */
     this.global.infoExtra()
@@ -105,7 +105,8 @@ export class HomePage implements OnInit {
   async openModal() {
     this.storage.saveStorage('primerAcceso', true);
     const modal = await this.modalController.create({
-      component: ModalPage
+      component: ModalPage,
+      cssClass: 'modal-personalizada'
     });
     return await modal.present();
   }
