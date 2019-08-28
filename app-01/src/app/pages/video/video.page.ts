@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VideoPlayer } from '@ionic-native/video-player/ngx';
+import { MultimediaService } from 'src/app/providers/multimedia.service';
+
 
 @Component({
   selector: 'app-video',
@@ -8,26 +9,17 @@ import { VideoPlayer } from '@ionic-native/video-player/ngx';
 })
 export class VideoPage implements OnInit {
 
-  videoFile =  '../../../assets/videos/ionic-video.mp4';
-  
-  constructor( private videoPlayer: VideoPlayer ) { }
+  videoFile = '../../../assets/videos/ionic-video.mp4';
+
+  constructor( public media: MultimediaService)  { }
 
   ngOnInit() {
-    this.videoPlayer.play('this.videoFile').then(() => {
-      console.log('video completed');
-     }).catch(err => {
-      console.log(err);
-     });
 
   }
 
-verVideo() {
-  this.videoPlayer.play(this.videoFile).then(() => {
- console.log('video completed');
-}).catch(err => {
- console.log(err);
-});
-}
+  verVideo() {
+
+  }
 
 
 }

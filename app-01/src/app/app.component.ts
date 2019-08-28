@@ -26,16 +26,6 @@ export class AppComponent {
       icon: 'infinite'
     },
     {
-      title: 'Social Share',
-      url: '/socialshare',
-      icon: 'paper-plane'
-    },
-    {
-      title: 'Music',
-      url: '/audio',
-      icon: 'musical-notes'
-    },
-    {
       title: 'Lista Usuarios',
       url: '/usuarios-lista',
       icon: 'list'
@@ -46,18 +36,13 @@ export class AppComponent {
       icon: 'list'
     },
     {
-      title: 'Registrar usuario',
-      url: '/registrar',
-      icon: 'person-add'
-    },
-    {
       title: 'Listado de usuarios',
       url: '/listado-usuarios',
       icon: 'person-add'
     },
     {
       title: 'TABS',
-      url: '/tabs',
+      url: '/tabs/video',
       icon: 'moon'
     }
   ];

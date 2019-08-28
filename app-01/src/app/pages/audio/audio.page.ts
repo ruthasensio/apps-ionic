@@ -1,27 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
-import { AudioService } from 'src/app/providers/audio.service';
-
+import { MultimediaService } from 'src/app/providers/multimedia.service';
 
 @Component({
   selector: 'app-audio',
   templateUrl: './audio.page.html',
   styleUrls: ['./audio.page.scss'],
 })
-export class AudioPage {
+export class AudioPage implements OnInit {
+  urlFile = '../../../assets/sounds/aladdin.mp3';
+
 
   constructor(
-    public nativeAudio: NativeAudio,
-    public sound: AudioService
+    public media: MultimediaService,
+    public audio: NativeAudio
   ) { }
 
-  ionViewDidLoad	() {
-        this.sound.preloadSound()
 
+
+  ngAfterViewInit() {
+    this.audio.preloadSimple('audiox', '../../../assets/sounds/sirenita.mp3')
+      .then(() => {
+        console.log("ok")
+      });
   }
 
-   sonido() {
-    this.sound.playSound();
+
+
+  ngOnInit() {
+    this.audio.preloadSimple('audiox', '../../../assets/sounds/sirenita.mp3');
+  }
+
+
+
+
+
+  //Accion al pulsar el boton:
+  sonido() {
+    console.log('reproduciendo')
+    this.audio.play('audiox');
   }
 
 }

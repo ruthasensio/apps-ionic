@@ -6,12 +6,12 @@ import { NativeAudio } from '@ionic-native/native-audio/ngx';
 })
 
 export class AudioService {
-
+  uniqueId1 = '../../../assets/sounds/aladdin.mp3';
   constructor(public nativeAudio: NativeAudio) { }
 
 
-  preloadSound() {
-      this.nativeAudio.preloadSimple('uniqueId1', '../assets/sounds/aladdin.mp3');
+  preloadSound(urlFile) {
+      this.nativeAudio.preloadSimple('uniqueId1', urlFile);
   }
 
   playSound() {
@@ -21,7 +21,7 @@ export class AudioService {
       console.log(err);
     });
  */
-    this.nativeAudio.play('uniqueId1', () => 
+    this.nativeAudio.play(this.uniqueId1, () => 
     console.log('uniqueId1 is done playing'));
   }
 
