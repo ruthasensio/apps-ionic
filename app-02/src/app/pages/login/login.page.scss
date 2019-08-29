@@ -1,0 +1,43 @@
+/* 34642e */
+
+.content-login { 
+    background-color: aquamarine;
+    background-image: url('../../../assets/images/bg-login.jpg');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    height: 100vh;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+ ion-content {
+/*     --background: rgb(248, 238, 219);
+ */    
+    .form-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8) ;
+        border-radius: 5px; 
+        width: 80%;
+        padding: 2em 0; 
+    }
+    
+    div.form-items { text-align: center; width: 90%; }
+    ion-input { text-align: center; }
+    img { width: 60%; }
+    ion-button { 
+        margin-top: 1.5em; 
+        --background: #34642e; 
+    }
+
+}
+
+ion-item {
+    --background: transparent; 
+}
+
+ 

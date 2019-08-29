@@ -1,0 +1,31 @@
+<ion-content class="login">
+
+  <div class="content-login">
+  <div class="form-login">
+
+    <div class="form-items">
+        <img src="../../../assets/images/logo-b.png" alt="logo" />
+    </div>
+
+
+
+    <div class="form-items">
+      <ion-item>
+        <form (ngSubmit)="accesoHome()" [formGroup]="authForm">
+
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="email" formControlName="email" name="email" placeholder="User/E-mail">
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="passw" formControlName="passw" name="passw" placeholder="Password"></ion-input>
+          </ion-item>
+
+          <ion-button type="submit" expand="full" fill="solid">entrar</ion-button>
+        </form>
+      </ion-item>
+    </div>
+  </div>
+  </div>
+</ion-content>
