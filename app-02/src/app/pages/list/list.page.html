@@ -10,18 +10,34 @@
 </ion-header>
 
 <ion-content>
+  <div class="div-general">
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
+    <ion-item-sliding *ngFor="let item of listaAnimes">
+
+      <ion-item class="blanco">
+        <ion-avatar slot="start"><img [src]="item.attributes.posterImage.large"></ion-avatar>
+        <ion-label>
+          <h3>{{item.attributes.canonicalTitle}}</h3>
+        </ion-label>
+        <ion-icon name="arrow-round-back" class="blanco"></ion-icon>
+      </ion-item> 
+
+      <ion-item-options>
+        <ion-item-option color="danger" expandable class="btn-mini">
+          <ion-icon slot="icon-only" name="md-trash"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="tertiary" expandable class="btn-mini">
+          <ion-icon slot="icon-only" name="md-create"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
   </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando mas usuarios...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</div>
+
 </ion-content>

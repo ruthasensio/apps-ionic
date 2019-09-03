@@ -10,19 +10,57 @@
 </ion-header>
 
 <ion-content>
+  <div class="div-general">
 
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
+    <div class="tit-h2">
+      <h2>NOVEDADES</h2>
+    </div>
+    <ion-slides pager="false" [options]="slideOpts">
+      <ion-slide *ngFor="let item of listaNovedades">
+        <div class="news-slider">
+          <div class="news-img"><img [src]="item.attributes.posterImage.large"></div>
+          <div class="news-tit">
+            <p>{{item.attributes.canonicalTitle}}</p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
 
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
+    <div class="tit-h3">
+      <h3>CATEGORIAS</h3>
+    </div>
 
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
+    <div class="div-categorias">
+      <ion-chip outline color="secondary">
+        <ion-label>Comedia</ion-label>
+      </ion-chip>
+      <ion-chip outline color="secondary">
+        <ion-label>Acción</ion-label>
+      </ion-chip>
+      <ion-chip outline color="secondary">
+        <ion-label>Drama</ion-label>
+      </ion-chip>
+      <ion-chip outline color="secondary">
+        <ion-label>Others</ion-label>
+      </ion-chip>
+    </div>
+
+    <div class="tit-h3">
+      <h3>PERSONAJES</h3>
+    </div>
+
+    <div class="div-listado">
+      <div *ngFor="let item of listaPersonajes" class="div-lista"> 
+        <div class="div-listado-img" slot="start"><img [src]="item.attributes.image.original"></div>
+        <div class="div-listado-txt">
+          <p>{{item.attributes.canonicalName}}</p>
+          <p [innerHTML]>"{{item.attributes.description.slice(0, 120)}}"...</p>
+        </div>
+      </div>
+      <button class="btn-ver">Ver todos</button>
+    </div>
+
+
 
     <ion-list lines="none">
       <ion-list-header>
@@ -47,6 +85,9 @@
     </ion-list>
 
     <ion-item>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-item>
+      <p>Now that your app has been created, you'll want to start building out features and components. Check out some
+        of the resources below for next steps.</p>
+    </ion-item>
+
+  </div>
 </ion-content>

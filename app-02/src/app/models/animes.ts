@@ -1,4 +1,4 @@
-export default class UsuariosModel {
+export default class AnimesModel {
     constructor (
         public attributes: {
             canonicalTitle: string,

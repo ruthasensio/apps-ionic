@@ -1,7 +1,7 @@
 /* 34642e */
 
 .content-login { 
-    background-color: aquamarine;
+    background-color: #000;
     background-image: url('../../../assets/images/bg-login.jpg');
     background-size: cover;
     background-position: center center; 
@@ -14,24 +14,28 @@
 
  ion-content {
 /*     --background: rgb(248, 238, 219);
- */    
+ */       --placeholder-color: #0cd1e8;
+
+ 
     .form-login {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: rgba(255, 255, 255, 0.8) ;
+        color: #0cd1e8;
         border-radius: 5px; 
         width: 80%;
         padding: 2em 0; 
     }
     
     div.form-items { text-align: center; width: 90%; }
-    ion-input { text-align: center; }
+    ion-input { text-align: center; --color: #000; }
     img { width: 60%; }
     ion-button { 
         margin-top: 1.5em; 
-        --background: #34642e; 
+        border-color: 1px solid #000;
+        --background: #0cd1e8; 
     }
 
 }

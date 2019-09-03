@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
+import { ApiService } from 'src/app/providers/api.service';
 
 
 
@@ -17,10 +18,11 @@ export class LoginPage implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    public navCtrl: NavController
-    ) { }
+    public navCtrl: NavController,
+    public api: ApiService
+  ) { }
 
-    
+
   ngOnInit() {
 
     // Validador del formulario
@@ -31,6 +33,13 @@ export class LoginPage implements OnInit {
 
   }
 
+  
+/*   acceso() {
+    this.api.login()
+      .then((res) => {
+        console.log(res)
+      });
+  } */
 
   accesoHome() {
     this.navCtrl.navigateRoot('home');

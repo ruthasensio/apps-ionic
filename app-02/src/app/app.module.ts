@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, FormBuilder } from '@angular/forms';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Globalization } from '@ionic-native/globalization/ngx';
+import { HttpClientModule, HttpClient, HttpParams } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,13 +19,16 @@ import { Globalization } from '@ionic-native/globalization/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
     Globalization,
+    HttpClient,
+    HttpParams,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
