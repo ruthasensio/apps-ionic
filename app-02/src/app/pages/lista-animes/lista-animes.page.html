@@ -3,14 +3,22 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Lista de Animes </ion-title>
+
+    <ion-title>
+      Categoría {{this.api.categoriaActiva}}
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="div-general">
   <ion-list>
-    <ion-item-sliding *ngFor="let item of listaAnimes">
+    <ion-item-sliding *ngFor="let item of listaAnimesCat">
 
       <ion-item class="blanco">
         <ion-avatar slot="start"><img [src]="item.attributes.posterImage.large"></ion-avatar>
@@ -33,7 +41,7 @@
   </ion-list>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando animes...">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando mas usuarios...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </div>

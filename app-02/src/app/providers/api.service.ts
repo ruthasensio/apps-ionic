@@ -73,10 +73,11 @@ public async login(): Promise<any> {
       let cantidadS = cantidad.toString();
       let inicioS = inicio.toString(); 
 
-      url = url + '?page[limit]=' + cantidad + '&page[offset]=' + inicio + '&filter[genre]=' + categoria
+      url = url + '?page[limit]=' + cantidad + '&page[offset]=' + inicio + '&filter[genres]=' + categoria
+      console.log(url)
       let options = {
         headers: new HttpHeaders().append("Content-Type", "application/json"),
-        params: new HttpParams().set("cantidad", cantidadS).set("inicio", inicioS)
+        params: new HttpParams().set("cantidad", cantidadS).set("inicio", inicioS).set("categoria", categoria)
       }
 
       this.httpClient.get(url, options).subscribe((res) => {

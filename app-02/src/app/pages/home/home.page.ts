@@ -96,10 +96,9 @@ export class HomePage {
 
   /* ACCESOS A CATEGORIAS*/
   
-  comedia() {
-    //ir a comedia
-    this.api.categoriaActiva = 'comedy';
-    this.navCtrl.navigateRoot('home');
+  listaCat(cat:string) {
+    this.api.categoriaActiva = cat;
+    this.navCtrl.navigateRoot('lista-animes');
   }
   
 }
