@@ -54,7 +54,7 @@
         <div class="div-listado-img" slot="start"><img [src]="item.attributes.image.original"></div>
         <div class="div-listado-txt">
           <p>{{item.attributes.canonicalName}}</p>
-          <p [innerHTML]>"{{item.attributes.description.slice(0, 120)}}"...</p>
+          <p [innerHTML]="item.attributes.description.slice(0, 120)">...</p>
         </div>
       </div>
       <button class="btn-ver">Ver todos</button>

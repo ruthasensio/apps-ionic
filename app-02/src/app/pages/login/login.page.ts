@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { ApiService } from 'src/app/providers/api.service';
+import { LoginService } from 'src/app/providers/login.service';
 
 
 
@@ -19,11 +20,18 @@ export class LoginPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     public navCtrl: NavController,
-    public api: ApiService
+    public api: ApiService,
+    public login: LoginService
   ) { }
 
 
   ngOnInit() {
+
+    this.alumno = new Alumno();
+    this.alumno.curso = null;
+    this.alumno.sede = null;
+    this.alumno.turno = null;
+    
 
     // Validador del formulario
     this.authForm = this.formBuilder.group({
@@ -34,12 +42,13 @@ export class LoginPage implements OnInit {
   }
 
   
-/*   acceso() {
-    this.api.login()
+   acceso() {
+     console.log(this.login.datosLogin)
+/*     this.login.login()
       .then((res) => {
         console.log(res)
-      });
-  } */
+      }); */
+  } 
 
   accesoHome() {
     this.navCtrl.navigateRoot('home');

@@ -10,6 +10,8 @@ import PersonajesModel from '../models/personajes';
 export class ApiService {
 
   categoriaActiva: string;
+  animeActivo: AnimesModel; 
+
   grant_type = 'password'
   $username = '';
   $password = '';
@@ -39,7 +41,6 @@ public async login(): Promise<any> {
   })
 }
   */
-
 
 
   //PEDIMOS LOS DATOS PAGINADOS // ANGULAR 8 
@@ -73,7 +74,7 @@ public async login(): Promise<any> {
       let cantidadS = cantidad.toString();
       let inicioS = inicio.toString(); 
 
-      url = url + '?page[limit]=' + cantidad + '&page[offset]=' + inicio + '&filter[genres]=' + categoria
+      url = url + '?page[limit]=' + cantidad + '&page[offset]=' + inicio + '&filter[categories]=' + categoria
       console.log(url)
       let options = {
         headers: new HttpHeaders().append("Content-Type", "application/json"),

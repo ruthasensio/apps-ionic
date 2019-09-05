@@ -9,7 +9,7 @@
     </ion-title>
 
     <ion-buttons slot="end">
-      <ion-back-button></ion-back-button>
+      <ion-back-button>BACK</ion-back-button>
     </ion-buttons>
     
   </ion-toolbar>
@@ -24,8 +24,12 @@
         <ion-avatar slot="start"><img [src]="item.attributes.posterImage.large"></ion-avatar>
         <ion-label>
           <h3>{{item.attributes.canonicalTitle}}</h3>
+          <p>{{item.attributes.subtype}}</p>
         </ion-label>
-        <ion-icon name="arrow-round-back" class="blanco"></ion-icon>
+        <ion-item slot="end">
+          <ion-badge  color="secondary">{{item.attributes.episodeCount}}</ion-badge>
+          <img src="../../assets/images/swipe.png" class="swipe">
+        </ion-item>
       </ion-item> 
 
       <ion-item-options>

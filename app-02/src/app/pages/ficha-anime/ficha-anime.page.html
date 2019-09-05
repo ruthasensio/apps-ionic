@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>{{this.animeActivo.attributes.abbreviatedTitles}}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="div-general">
+
+    <div class="ficha-img">
+      <img [src]="this.animeActivo.attributes.posterImage.large">
+    </div>
+
+    <div class="ficha-descripcion">
+      <!-- ESTRELLAS -->
+      {{this.animeActivo.attributes.subtype}}
+      {{this.animeActivo.attributes.episodeCount}}
+      {{this.animeActivo.attributes.ratingRank}}
+    </div>
+
+    <div class="tit-h3">
+      <h3>Sinopsis</h3>
+    </div>
+
+    <div class="ficha-sinopsis">
+      <p>{{this.animeActivo.attributes.synopsis}}</p>
+    </div>
+
+  </div>
+</ion-content>

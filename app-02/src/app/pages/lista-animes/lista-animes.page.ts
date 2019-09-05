@@ -9,15 +9,15 @@ import AnimesModel from 'src/app/models/animes';
   styleUrls: ['./lista-animes.page.scss'],
 })
 export class ListaAnimesPage implements OnInit {
-  /*   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;  */
-  cantidad: number = 10;
+/*       @ViewChild(IonInfiniteScroll, this.x) infiniteScroll: IonInfiniteScroll;  
+ */  cantidad: number = 10;
   inicio: number = 0;
   listaAnimesCat: AnimesModel[]; // Array con todo el listado 
   totalAnimes: number;
   urlAnimes = "https://kitsu.io/api/edge/anime";
 
 
-  constructor(public api: ApiService, public infiniteScroll: IonInfiniteScroll) { }
+  constructor(public api: ApiService) { }
 
   ngOnInit() {
 

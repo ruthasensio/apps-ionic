@@ -1,6 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/providers/api.service';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, NavController } from '@ionic/angular';
 import AnimesModel from 'src/app/models/animes';
 
 @Component({
@@ -11,16 +11,19 @@ import AnimesModel from 'src/app/models/animes';
 
 export class ListPage implements OnInit {
 
-    @ViewChild(IonInfiniteScroll, this.x) infiniteScroll: IonInfiniteScroll;
+   /*  @ViewChild(IonInfiniteScroll, this.x) infiniteScroll: IonInfiniteScroll; */
    
   cantidad: number = 10;
   inicio: number = 0;
   listaAnimes: AnimesModel[]; // Array con todo el listado 
   totalAnimes: number;
   urlAnimes = "https://kitsu.io/api/edge/anime";
+  pop: string = '';
 
-
-  constructor(public api: ApiService) {
+  constructor(
+    public api: ApiService,  
+    public navCtrl: NavController
+    ) {
   }
 
   ngOnInit() {
@@ -58,6 +61,22 @@ export class ListPage implements OnInit {
   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
+
+
+  notify() {
+    console.dir("selector:" + this.pop);
+  }
+
+  verDetalle(item) {
+    this.api.animeActivo = item;
+    this.navCtrl.navigateRoot('detalleanimes/ficha-anime');
+  }
+
+  addDetalle(item) {
+    //
+    
+      }
+
 
 
 }

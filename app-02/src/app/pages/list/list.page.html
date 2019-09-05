@@ -1,41 +1,82 @@
 <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Listado de Animes</ion-title>
+      <ion-buttons slot="end">
+        <ion-back-button ></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <!-- <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Lista de Animes </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+
+
 
 <ion-content>
   <div class="div-general">
-  <ion-list>
-    <ion-item-sliding *ngFor="let item of listaAnimes">
 
-      <ion-item class="blanco">
-        <ion-avatar slot="start"><img [src]="item.attributes.posterImage.large"></ion-avatar>
-        <ion-label>
-          <h3>{{item.attributes.canonicalTitle}}</h3>
-        </ion-label>
-        <ion-icon name="arrow-round-back" class="blanco"></ion-icon>
-      </ion-item> 
+    <ion-item>
+      <ion-label>Selecciona una categoría</ion-label>
+      <ion-select value="adventure" interface="popover" [(ngModel)]="pop" (ionChange)="notify(event)">
+        <ion-select-option  value="adventure">Aventuras</ion-select-option>
+        <ion-select-option value="action">Acción</ion-select-option>
+        <ion-select-option value="comedy">Comedia</ion-select-option>
+        <ion-select-option value="drama">Drama</ion-select-option>
+        <ion-select-option value="future">Futurista</ion-select-option>
+        <ion-select-option value="fantasy">Fantasia</ion-select-option>
+        <ion-select-option value="horror">Horror</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-      <ion-item-options>
-        <ion-item-option color="danger" expandable class="btn-mini">
-          <ion-icon slot="icon-only" name="md-trash"></ion-icon>
-        </ion-item-option>
-        <ion-item-option color="tertiary" expandable class="btn-mini">
-          <ion-icon slot="icon-only" name="md-create"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
+    <div class="galeria-lista" *ngFor="let item of listaAnimes">
+      <div class="galeria-item">
+        <div class="galeria-img"><img [src]="item.attributes.posterImage.large"></div>
+        <div class="galeria-txt"><p>{{item.attributes.canonicalTitle}}</p></div>
+      </div>
+    </div>
 
-    </ion-item-sliding>
-  </ion-list>
+<!-- 
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of listaAnimes">
 
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando animes...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-</div>
+        <ion-item class="blanco">
+          <ion-avatar slot="start"><img [src]="item.attributes.posterImage.large"></ion-avatar>
+          <ion-label>
+            <h3>{{item.attributes.canonicalTitle}}</h3>
+          </ion-label>
+
+        </ion-item>
+
+        <ion-item-options>
+          <ion-item-option color="primary" expandable class="btn-mini" (click)="verDetalle(item)">
+            <ion-icon slot="icon-only" name="eye"></ion-icon>
+          </ion-item-option>
+
+          <ion-item-option color="warning" expandable class="btn-mini" (click)="addFavoritos(item)">
+            <ion-icon slot="icon-only" name="star"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-list> -->
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando animes...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
 
 </ion-content>
+
+<ion-footer>
+  <ion-searchbar class="search"></ion-searchbar>
+</ion-footer>

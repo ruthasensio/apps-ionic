@@ -7,10 +7,15 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  { path: 'home',  loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule) },
-  { path: 'list',  loadChildren: () => import('./pages/list/list.module').then(m => m.ListPageModule) },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'lista-animes', loadChildren: () => import('./pages/lista-animes/lista-animes.module').then(m => m.ListaAnimesPageModule) }
+  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
+  { path: 'list', loadChildren: './pages/list/list.module#ListPageModule' },
+
+/*   { path: 'home',  loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule) },
+  { path: 'list',  loadChildren: () => import('./pages/list/list.module').then(m => m.ListPageModule) }, */
+
+  { path: 'lista-animes', loadChildren: () => import('./pages/lista-animes/lista-animes.module').then(m => m.ListaAnimesPageModule) },
+  { path: '', loadChildren: './pages/detalle-animes/detalle-animes.module#DetalleAnimesPageModule' }
 ];
 
 @NgModule({
