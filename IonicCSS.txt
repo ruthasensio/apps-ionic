@@ -1,3 +1,8 @@
 
 MODIFICAR EL MENU SIDEBAR 
 https://hoshcoding.com/ionic-4-create-customizable-sidenav
+
+
+
+https://kitsu.io/api/edge/users?filter[slug]=arkadya
+id":"571695"

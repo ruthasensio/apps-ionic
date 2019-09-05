@@ -7,19 +7,17 @@
         <img src="../../../assets/images/logo-b.png" alt="logo" />
     </div>
 
-
-
     <div class="form-items">
       <ion-item>
-        <form (ngSubmit)="acceso()" [formGroup]="authForm">
+        <form (ngSubmit)="acceso(username, password)" [formGroup]="authForm">
 
           <ion-item>
-            <ion-input type="text" [(ngModel)]="email" formControlName="email" name="email" placeholder="User/E-mail">
+            <ion-input type="text" [(ngModel)]="username" formControlName="email" name="email" placeholder="User/E-mail">
             </ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-input type="text" [(ngModel)]="passw" formControlName="passw" name="passw" placeholder="Password"></ion-input>
+            <ion-input type="password" [(ngModel)]="password" formControlName="passw" name="passw" placeholder="Password"></ion-input>
           </ion-item>
 
           <ion-button type="submit" expand="full" fill="solid">entrar</ion-button>

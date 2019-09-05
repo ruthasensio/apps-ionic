@@ -46,9 +46,7 @@ export class HomePage {
 
   ngOnInit() {
 
-    this.alert.alerta('Acceso correcto.');
     this.menu.enable(true);
-
 
     // RECOGEMOS EL TOTAL DE PERSONALES PARA SACAR UN NUMERO ALEATORIO ENTRE TODOS LOS EXISTENTES
     this.api.total(this.urlPersonajes)

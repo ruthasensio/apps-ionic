@@ -1,41 +1,49 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+<ion-content class="ion-no-padding">
+  <div class="home">
 
-    <ion-title>{{this.animeActivo.attributes.abbreviatedTitles}}</ion-title>
-
-    <ion-buttons slot="end">
-      <ion-button slot="icon-only" (click)="back()">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
-  </ion-toolbar>
-</ion-header>
-
-
-<ion-content>
-  <div class="div-general">
-
-    <div class="ficha-img">
-      <img [src]="this.animeActivo.attributes.posterImage.large">
+    <div class="menu-icon">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-button>
+            <ion-icon name="cog"></ion-icon>
+          </ion-button>
+          <ion-button slot="icon-only end" (click)="back()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
     </div>
 
-    <div class="ficha-descripcion">
-      <!-- ESTRELLAS -->
-      {{this.animeActivo.attributes.subtype}}
-      {{this.animeActivo.attributes.episodeCount}}
-      {{this.animeActivo.attributes.ratingRank}}
-    </div>
+    <div class="div-general home-content">
 
-    <div class="tit-h3">
-      <h3>Sinopsis</h3>
-    </div>
+      <div class="ficha-grupo">
+        <div class="ficha-img">
+          <img [src]="this.animeActivo.attributes.posterImage.large">
+        </div>
 
-    <div class="ficha-sinopsis">
-      <p>{{this.animeActivo.attributes.synopsis}}</p>
+        <div class="ficha-descripcion">
+          <h3>{{this.animeActivo.attributes.canonicalTitle}}</h3>
+          <ul>
+            <li>Tipo de serie: <span class="recuadro-azul">{{this.animeActivo.attributes.subtype}}</span> </li>
+            <li>Número de episodios: <span class="recuadro-azul">{{this.animeActivo.attributes.episodeCount}}</span>
+            </li>
+            <li>¡Ranking!<span class="recuadro-azul">{{this.animeActivo.attributes.ratingRank}}</span></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+      <div class="ficha-sinopsis">
+        <div class="tit-h3">
+          <h3>Sinopsis</h3>
+        </div>
+
+        <p>{{this.animeActivo.attributes.synopsis}}</p>
+
+      </div>
     </div>
 
   </div>

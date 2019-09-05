@@ -13,8 +13,8 @@ export class AlertsService {
     this.toastController.create({
       header: 'ALERTA',
       message:  mensajeToast,
-      duration: 1000,
-      position: 'middle',
+      duration: 1500,
+      position: 'top',
       cssClass: "toast-alert"
     }).then((res) => {
 

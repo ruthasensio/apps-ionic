@@ -19,7 +19,7 @@
 
 
       <div class="galeria-lista">
-        <div class="galeria-item" *ngFor="let item of listaAnimes">
+        <div class="galeria-item" *ngFor="let item of listaAnimes" (click)="verDetalle(item)">
           <div class="galeria-img"><img [src]="item.attributes.posterImage.large"></div>
           <div class="galeria-txt">
             <p>{{item.attributes.canonicalTitle}}</p>

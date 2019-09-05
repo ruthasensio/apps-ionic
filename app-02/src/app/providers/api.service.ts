@@ -11,7 +11,7 @@ export class ApiService {
 
   categoriaActiva: string;
   animeActivo: AnimesModel; 
-
+  access_token: string;
   grant_type = 'password'
   $username = '';
   $password = '';
@@ -20,28 +20,7 @@ export class ApiService {
 
   constructor(public httpClient: HttpClient) { }
 
-// LOGIN
-
-
-public async login(): Promise<any> {
-  return new Promise<any>((resolve, reject) => {
-   
-    let options = {
-      headers: new HttpHeaders().append("Content-Type", "application/vnd.api+json")
-      .append("Accept", "application/vnd.api+json"),
-      params: new HttpParams()
-      .set("CLIENT_ID", 'dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd')
-      .set("CLIENT_SECRET", '54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151')
-    }
-
-    this.httpClient.post('https://kitsu.io/api/oauth/', options).subscribe((res) => {
-      resolve(res);
-    })
-
-  })
-}
   
-
 
   //PEDIMOS LOS DATOS PAGINADOS // ANGULAR 8 
 
@@ -53,7 +32,8 @@ public async login(): Promise<any> {
 
       url = url + '?page[limit]=' + cantidad + '&page[offset]=' + inicio
       let options = {
-        headers: new HttpHeaders().append("Content-Type", "application/json"),
+        headers: new HttpHeaders().append("Content-Type", "application/json")
+        .append("Authorization", "Bearer this.access_token"),
         params: new HttpParams().set("cantidad", cantidadS).set("inicio", inicioS)
       }
 
@@ -100,8 +80,6 @@ public async login(): Promise<any> {
   }
 
 
-
-
   //PEDIMOS PERSONAJES ALEATORIOS // ANGULAR 8 
 
   public async pedirPersonajes(url: string, cantidad, inicio): Promise<PersonajesModel[]> {
@@ -112,7 +90,8 @@ public async login(): Promise<any> {
       url = url + '?page[limit]=' + cantidad + '&page[offset]=' + inicio;
 
       let options = {
-        headers: new HttpHeaders().append("Content-Type", "application/json"),
+        headers: new HttpHeaders().append("Content-Type", "application/json")
+        .append("Authorization", "Bearer this.access_token"),
         params: new HttpParams().set("cantidad", cantidadS)
           .set("inicio", inicioS)
       }
