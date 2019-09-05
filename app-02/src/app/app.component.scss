@@ -1,9 +1,50 @@
-/* HOME */
+/* HOME y HEADER */
+* { box-sizing: border-box; }
+
+.menu-icon {
+  top: 0;
+  width: 100%;
+  height: 18%;
+  z-index: 99;
+  position: fixed; 
+  background-image: url('/assets/images/bg-home.png');
+  background-color:  rgb(19, 19, 19); 
+  background-position: top left;
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin: 0; padding: 0;
+
+  .menu-title {
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    h1 { font-size: 50px; text-transform: uppercase; }
+  }
+
+  .menu-busqueda {
+    width: 90%;
+    margin-left: 5%;
+    position: absolute;
+    top: 42px;
+    text-align: center;
+  }
+}
+
+
+.home {
+  margin: 0; padding: 0;
+}
 
 .div-general {
     width: 90%;
     margin: auto;
   }
+
+ .home-content {
+    padding-top: 120px;
+        }
   
   .news-slider {
     margin: 0;
@@ -97,6 +138,7 @@ ion-item {
 }
 
 .search {
+
     --background: rgb(240, 238, 238);
     --cancel-button-color: rgb(37, 37, 37);
 }
@@ -107,7 +149,7 @@ ion-item {
 
     
 
-    /* DETALLES PAGE */
+/* DETALLES PAGE */
 
 .contenido-ficha {
   margin: 0
@@ -131,9 +173,19 @@ width: 25%;
 .galeria-lista {
   display: flex;
   flex-wrap:wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
+
 .galeria-item {
   width: 30%;
+  margin:5px;
+}
+.galeria-txt {
+  margin-top:-10px;
+  font-size: 12px; 
+  font-weight: 100;
+  text-align: center;
 }
 
 /* GENERAL CSS*/ 
@@ -143,3 +195,12 @@ toast-container {
     --width:90%;
 }
 
+
+/* ESPECIALES */
+.triangulo {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 200px 200px 0 0;
+  border-color: #007bff transparent transparent transparent; 
+}

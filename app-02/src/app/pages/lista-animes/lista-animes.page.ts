@@ -9,8 +9,10 @@ import AnimesModel from 'src/app/models/animes';
   styleUrls: ['./lista-animes.page.scss'],
 })
 export class ListaAnimesPage implements OnInit {
-/*       @ViewChild(IonInfiniteScroll, this.x) infiniteScroll: IonInfiniteScroll;  
- */  cantidad: number = 10;
+  
+  @ViewChild(IonInfiniteScroll,{static:false}) infiniteScroll: IonInfiniteScroll;  
+
+  cantidad: number = 10;
   inicio: number = 0;
   listaAnimesCat: AnimesModel[]; // Array con todo el listado 
   totalAnimes: number;

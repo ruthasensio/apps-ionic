@@ -27,11 +27,11 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
 
-    this.alumno = new Alumno();
-    this.alumno.curso = null;
-    this.alumno.sede = null;
-    this.alumno.turno = null;
-    
+    /*  this.alumno = new Alumno();
+        this.alumno.curso = null;
+        this.alumno.sede = null;
+        this.alumno.turno = null; */
+
 
     // Validador del formulario
     this.authForm = this.formBuilder.group({
@@ -41,14 +41,15 @@ export class LoginPage implements OnInit {
 
   }
 
-  
-   acceso() {
-     console.log(this.login.datosLogin)
-/*     this.login.login()
+  acceso() {
+    this.login.login()
       .then((res) => {
-        console.log(res)
-      }); */
-  } 
+        /*    console.log(res)
+              console.log(this.login.datosLogin) */
+      }).catch((err) => {
+        console.log('error de conexion')
+      })
+  }
 
   accesoHome() {
     this.navCtrl.navigateRoot('home');

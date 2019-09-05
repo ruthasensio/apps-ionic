@@ -11,14 +11,15 @@ import AnimesModel from 'src/app/models/animes';
 
 export class ListPage implements OnInit {
 
-   /*  @ViewChild(IonInfiniteScroll, this.x) infiniteScroll: IonInfiniteScroll; */
-   
+ @ViewChild(IonInfiniteScroll,{static:false}) infiniteScroll: IonInfiniteScroll;  
+ 
   cantidad: number = 10;
   inicio: number = 0;
   listaAnimes: AnimesModel[]; // Array con todo el listado 
+  animesVacio: AnimesModel[];
   totalAnimes: number;
   urlAnimes = "https://kitsu.io/api/edge/anime";
-  pop: string = '';
+  selectorCategorias: string = '';
 
   constructor(
     public api: ApiService,  
@@ -28,13 +29,13 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
 
-    // Recogemos el total de usuarios
+    // Recogemos el total de animes
     this.api.total(this.urlAnimes)
       .then((res) => {
         this.totalAnimes = res.meta.count;
       })
 
-    // Recogemos la primera página de usuarios
+    // Recogemos la primera página de animes
     this.api.pedirAnimes(this.urlAnimes, this.cantidad, this.inicio)
       .then((res) => {
         this.listaAnimes = res;
@@ -58,13 +59,18 @@ export class ListPage implements OnInit {
   }
 
   // Infinite Scroll
-  toggleInfiniteScroll() {
+   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
-  }
+  } 
 
-
-  notify() {
-    console.dir("selector:" + this.pop);
+  cargarCategoria() {
+    //vaciamos la lista
+    this.listaAnimes = this.animesVacio;
+     // Recogemos la primera página de animes
+     this.api.pedirAnimesCat(this.urlAnimes, this.cantidad, this.inicio, this.selectorCategorias)
+     .then((res) => {
+       this.listaAnimes = res;
+     })
   }
 
   verDetalle(item) {
@@ -72,11 +78,19 @@ export class ListPage implements OnInit {
     this.navCtrl.navigateRoot('detalleanimes/ficha-anime');
   }
 
-  addDetalle(item) {
-    //
-    
-      }
+  buscar(datos:string) {
+    let busqueda = '?filter[text]=$'+datos
 
-
+    console.log(busqueda)
+      //vaciamos la lista
+      this.listaAnimes = this.animesVacio;
+      // Recogemos la primera página de anime
+      this.api.buscarAnimes(this.urlAnimes, busqueda)
+      .then((res) => {
+        this.listaAnimes = res;
+      })
+      //Desactivamos el Scroll
+      this.infiniteScroll.disabled = true; 
+     }
 
 }

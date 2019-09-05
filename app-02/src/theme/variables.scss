@@ -8,18 +8,26 @@
 
   font-family: 'Overpass', sans-serif;
   --ion-font-family: 'Overpass', sans-serif;
-  --ion-background-color:  rgb(19, 19, 19);
+  --ion-background-color:  rgb(19, 19, 19); 
   --ion-text-color:  #fff;
-  
+
+  .ion-no-padding { padding: 50px }
+
+  ion-toolbar {
+    --ion-background-color:  transparent;
+  }
   ion-toast {
     text-align: center;
   }
 
-
   ion-header {
-    --ion-background-color: rgb(19, 19, 19);
+    --ion-background-color:transparent;
     --ion-color: #fff;  
     --color: #fff;
+
+    ion-toolbar {
+      --background: transparent
+    }
 
     ion-buttons {
       --color: #fff;

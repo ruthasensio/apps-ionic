@@ -22,7 +22,7 @@ export class ApiService {
 
 // LOGIN
 
-/* 
+
 public async login(): Promise<any> {
   return new Promise<any>((resolve, reject) => {
    
@@ -40,7 +40,7 @@ public async login(): Promise<any> {
 
   })
 }
-  */
+  
 
 
   //PEDIMOS LOS DATOS PAGINADOS // ANGULAR 8 
@@ -131,7 +131,28 @@ public async login(): Promise<any> {
       });
 
     });
-
-
   }
+
+
+  //PEDIMOS LOS ANIMES SEGÚN LA BÚSQUEDA REALIZADA 
+
+  public async buscarAnimes(url: string, busqueda: string): Promise<AnimesModel[]> {
+    return new Promise<AnimesModel[]>((resolve, reject) => {
+
+      url = url + busqueda
+      console.log('dddddd')
+      let options = {
+        headers: new HttpHeaders().append("Content-Type", "application/json"),
+      }
+
+      this.httpClient.get(url, options).subscribe((res) => {
+        let listaUsuarios: AnimesModel[];
+        listaUsuarios = res['data'];
+        resolve(listaUsuarios);
+      })
+
+    })
+  }
+
+
 }
