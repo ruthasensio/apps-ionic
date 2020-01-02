@@ -1,2 +1,2 @@
 # apps-ionic
-# xxx
+# Practicando con ionic + angular
